@@ -6,6 +6,11 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.AbstractAction;
+import javax.swing.Action;
+import javax.swing.JLabel;
+import com.jgoodies.forms.factories.DefaultComponentFactory;
+import javax.swing.JPanel;
 
 public class HotelAnsen {
 	private JFrame frame;
@@ -44,17 +49,26 @@ public class HotelAnsen {
 
 		JButton searchRes = new JButton("Search Reservation");
 		searchRes.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+			public void actionPerformed(ActionEvent e) {
+				SearchRes search = new SearchRes();
 			}
 		});
 		searchRes.setBounds(49, 32, 347, 85);
 		frame.getContentPane().add(searchRes);
-		
+
 		JButton makeRes = new JButton("Make Reservation");
 		makeRes.setBounds(49, 148, 347, 85);
 		frame.getContentPane().add(makeRes);
 
 
+	}
+	private class SwingAction extends AbstractAction {
+		public SwingAction() {
+			putValue(NAME, "SwingAction");
+			putValue(SHORT_DESCRIPTION, "Some short description");
+		}
+		public void actionPerformed(ActionEvent e) {
+		}
 	}
 }
 
