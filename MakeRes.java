@@ -3,10 +3,8 @@ package hotelAnsen;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import java.awt.Panel;
 
-public class SearchRes {
+public class MakeRes {
 
 	private JFrame frame;
 
@@ -17,7 +15,7 @@ public class SearchRes {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					SearchRes window = new SearchRes();
+					MakeRes window = new MakeRes();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -29,7 +27,7 @@ public class SearchRes {
 	/**
 	 * Create the application.
 	 */
-	public SearchRes() {
+	public MakeRes() {
 		initialize();
 	}
 
@@ -40,6 +38,6 @@ public class SearchRes {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 700, 500);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
 	}
+
 }

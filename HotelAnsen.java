@@ -6,11 +6,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.AbstractAction;
-import javax.swing.Action;
-import javax.swing.JLabel;
-import com.jgoodies.forms.factories.DefaultComponentFactory;
-import javax.swing.JPanel;
+import java.awt.Button;
 
 public class HotelAnsen {
 	private JFrame frame;
@@ -43,32 +39,27 @@ public class HotelAnsen {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
+		frame.setBounds(100, 100, 700, 500);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
 		JButton searchRes = new JButton("Search Reservation");
 		searchRes.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				SearchRes search = new SearchRes();
+				SearchRes.main(null);
 			}
 		});
-		searchRes.setBounds(49, 32, 347, 85);
+		searchRes.setBounds(168, 97, 347, 85);
 		frame.getContentPane().add(searchRes);
 
 		JButton makeRes = new JButton("Make Reservation");
-		makeRes.setBounds(49, 148, 347, 85);
+		makeRes.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				MakeRes.main(null);
+			}
+		});
+		makeRes.setBounds(168, 279, 347, 85);
 		frame.getContentPane().add(makeRes);
-
-
-	}
-	private class SwingAction extends AbstractAction {
-		public SwingAction() {
-			putValue(NAME, "SwingAction");
-			putValue(SHORT_DESCRIPTION, "Some short description");
-		}
-		public void actionPerformed(ActionEvent e) {
-		}
 	}
 }
 
